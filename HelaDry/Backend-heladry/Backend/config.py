@@ -1,15 +1,13 @@
 import os
 
 class Config:
-    # Render puts secret files in /etc/secrets/
-    # We check if that path exists; if not, we use the local filename
-    RENDER_SECRET_PATH = "/etc/secrets/firebase_key.json"
-    
-    FIREBASE_CREDENTIALS = os.getenv(
-        "FIREBASE_CREDENTIALS",
-        RENDER_SECRET_PATH if os.path.exists(RENDER_SECRET_PATH) else "firebase_key.json"
-    )
-    
+    DEBUG = os.getenv("FLASK_DEBUG", "False").lower() == "true"
+
+    # This MUST be the raw JSON string from your Firebase Admin SDK
+    # In Render: Create an Environment Variable 'FIREBASE_CREDENTIALS' 
+    # and paste the entire { ... } JSON content into it.
+    FIREBASE_CREDENTIALS = os.getenv("FIREBASE_CREDENTIALS")
+
     FIREBASE_DATABASE_URL = os.getenv(
         "FIREBASE_DATABASE_URL",
         "https://solar-dryer-iot-default-rtdb.asia-southeast1.firebasedatabase.app/"
