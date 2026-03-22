@@ -51,4 +51,4 @@ app = create_app()
 if __name__ == "__main__":
     # Use Render's dynamic port, default to 5000 for local safety
     port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port, debug=app.config["DEBUG"])
+    app.run(port=port, debug=app.config["DEBUG"])
