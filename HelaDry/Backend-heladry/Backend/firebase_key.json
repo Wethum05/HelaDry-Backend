@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "solar-dryer-iot",
+  "private_key_id": "0e1fe49125bc0cc5770523c7ce7e44465fa672d6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDZAZpqATmK7Npi\nKI2K3sDTBOeVhGbLDxC09wAj7DAaVTTcssjk6oNX25uWEq1BrioTyM4t0YDsyM35\nMBUMv1+5oqcXt/iEUsRlEQgFKFmta1IRM/VZVdwKeKV1Axj/1fP3soHFGkPSVnTB\np25OYe8tZ3lbsrYVaJUOXB5rhz+NS0Eh0FaRnhI2fpM1oEU3YcBsmS6K5CHnwAja\nIvJNB4XUdYcpj79sBZfOgsMevGAaN/2XUVqKTQzkUgeGWiZooHyvzN9CArxse095\noOcfLMm078oe6E66EqyuBXxJ/LG0SFUkU42QpqCpb+QQXrW3HAIoRrZUN4wdfhMT\nhUlxNg4zAgMBAAECggEAOPxcyl2L+Nl996zijoc0Z7WwAumD/Or13i/Gz6gkcaXS\nfepNKyASYa3/y4cYDFlqH0vqKMoNayDIRhnETVasEpmN+4KKNmVtwYSZcJFKC2pV\nYMMeONl9MRrBiFrJ49URfghYX6QoD0I44unO47KAFpJHojbp7fFKwzyZmG8p1zZi\nBpSWQdlBFzKvghw6HPHfDhcSFf5MRPbX6XMZZTTqaypaxOspXLy7OzezjSfy37Nk\nPwVS9I3wQwVzgHkjjCfT7vEVszlnVLBtqzxkWEx/U2xFG7r3l2KdEgkZTxwx4qN7\niuQv6xXlF4VaAraI3K9F70+GXUVjyQzm7kQlVHFokQKBgQDznVY6fjZ7eKKfPf2T\nMoP1rSZv4r4EeJMH+ryAwmZlAKfXXWeW7xe7E9C4KX69g0+TkSSbXW6c9DSylgN1\nX9p+DNLJh2HmnS2Mtvq+AbOLKaSNuvHN06ZvMKpH4kESdwC61jbzIPyvq+pPeSty\nmcQU+Sl8/1K/5SgiahEANTjXPwKBgQDkCfTvgOwU/plNWsv0nLYa9G5tqT5yWifX\n9ju1sc5DyFaRbvNgkYtrYcnFoJvpspJRaiREshtDoC4iAfiP0FjANZmntViX9TWC\nU5dDE6S+nqMy/UtFkrPuZ3UoFeXK/Uvp8NG9Z0buJJtdUFtmxFQ6b71QdyPK9skx\nQwnJXATgDQKBgBAxMP4KTYy/Y++5qxURknvN2nQtWfvqF7u8CrN0OGIWPRGvf6ck\nlSs2EfVrrKTkCXIBf7Fj8Go2QRptpiUzDc67A3epq/QsFk74Cop+inSBfBJ/jnrj\nyngxf9/vRev4RPAmNNjMJH94qcZGg4DGf6X1ObC5N8LRdG11J1QgNXr5AoGBALEJ\nJdXWkfHOoreSOOsjyqDsiNqr3OYsJeicqkhpzMeEvehUaa/b7pAkL+A0yzZIQx3f\nuF54o4AB2C7gttb3mh9GvY6c1DXM0YjnWnRhyLGQOQT57jkKJpR8T1EahvbrZMcv\nBbX0evWhB9kO7JbA7t8bJq9Ufz4wD4wmDm/793D1AoGBAJFjMVZIWDjRY20cK73B\nsXsuNXxcKyGoVEpi0PuU/LO7qBKGAzmtGvpxa8p5xze4qGheQR8zCV59JpFrW3qd\neqTQJ4gTOuhfGMt54PfL+m/8pEUuuG52gvamgEFuNhM2mgVQZ/9HitxF9atiuLxL\n1YLGF+jTnGXUdE64B98/tf8C\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fbsvc@solar-dryer-iot.iam.gserviceaccount.com",
+  "client_id": "106732162388658589122",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40solar-dryer-iot.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
