@@ -75,3 +75,45 @@ def end_session(user_id, device_id):
 
     except Exception:
         return {"error": "Failed to end session"}
+
+def sync_offline_session(user_id, device_id, session_data, history_logs):
+    """
+    Syncs an offline batch to the database.
+    Creates a completed session record and pushes data array to device history.
+    """
+    try:
+        session_id = str(uuid.uuid4())
+        ref = db.reference(f"sessions/{session_id}")
+
+        session_record = {
+            "session_id": session_id,
+            "user_id": user_id,
+            "device_id": device_id,
+            "status": "completed",
+            "is_offline_sync": True,
+            "sync_time": datetime.now(timezone.utc).isoformat()
+        }
+
+        if session_data:
+            for key in ["crop_name", "target_temperature", "start_time", "end_time", "duration", "weight_kg", "trays"]:
+                if key in session_data:
+                    session_record[key] = session_data[key]
+                    
+        ref.set(session_record)
+
+        # Append to device history array sequentially
+        synced_count = 0
+        if history_logs and isinstance(history_logs, list):
+            history_ref = db.reference(f"devices/{device_id}/history")
+            for log in history_logs:
+                history_ref.push(log)
+                synced_count += 1
+
+        return {
+            "session_id": session_id,
+            "synced_logs_count": synced_count,
+            "message": "Offline session successfully synchronized"
+        }
+
+    except Exception as e:
+        return {"error": f"Failed to sync offline session: {str(e)}"}
