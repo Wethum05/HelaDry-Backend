@@ -127,29 +127,50 @@ def register_device(user_id, device_id, device_name=None):
         device_ref = db.reference(f"devices/{device_id}")
         device = device_ref.get()
 
-        # Check if device already exists
+        # [FIX] Better registration logic: allow registration if:
+        # 1. Device doesn't exist yet
+        # 2. Device exists but has NO owner (owner was never set)
+        # 3. Device exists and is ALREADY owned by the same user (redundant but safe)
         if device:
-            return {"error": "Device already registered"}
+            current_owner = device.get("owner")
+            if current_owner and current_owner != user_id:
+                return {"error": "Device already registered to another user"}
+            
+            # If it's already owned by us, just return success
+            if current_owner == user_id:
+                return {
+                    "message": "Device already registered to you",
+                    "device_id": device_id
+                }
 
+        # Proceed with registration (initial or claiming an unowned node)
         timestamp = datetime.now(timezone.utc).isoformat()
-
-        device_ref.set({
+        
+        # Prepare data with existing live data preserved if it existed
+        update_data = {
             "device_id": device_id,
             "name": device_name if device_name else "HelaDry Device",
             "owner": user_id,
-            "status": "idle",
-            "created_at": timestamp,
+            "status": device.get("status", "idle") if device else "idle",
             "updated_at": timestamp,
-            "command": None,
-            "last_seen": None
-        })
+            "owner_assigned_at": timestamp
+        }
+        
+        # If it didn't exist, set initial fields
+        if not device:
+            update_data["created_at"] = timestamp
+            update_data["command"] = None
+            update_data["last_seen"] = None
+
+        device_ref.update(update_data)
 
         return {
             "message": "Device registered successfully",
             "device_id": device_id
         }
 
-    except Exception:
+    except Exception as e:
+        print(f"Registration error: {e}")
         return {"error": "Failed to register device"}
 
 
